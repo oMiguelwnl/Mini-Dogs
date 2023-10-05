@@ -1,0 +1,10 @@
+body{
+  font-family: Roboto,sans-serif;
+  margin: 2rem;
+}
+
+.container{
+  max-width: 300px;
+  padding: 2rem;
+  margin: 0 auto;
+}
