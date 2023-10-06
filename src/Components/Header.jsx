@@ -11,6 +11,7 @@ const Header = () => {
       <h1 className={styles.title}>Mini Dogs</h1>
       <button
         onClick={() => dispatch(userLogout())}
+        aria-label="Logout"
         className={`
         ${styles.login} 
         ${loading ? styles.loading : ''}

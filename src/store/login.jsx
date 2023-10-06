@@ -11,7 +11,7 @@ const token = createAsyncSlice({
   },
   reducers: {
     removeToken(state) {
-      state.data.token = null; // Correção aqui para definir o token como null em vez de todo o objeto data
+      state.data = null;
     },
     fetchSuccess: {
       reducer(state, action) {
@@ -61,13 +61,13 @@ const user = createAsyncSlice({
     },
   }),
 });
-
 const reducer = combineReducers({ token: token.reducer, user: user.reducer });
 
 const fetchToken = token.asyncAction;
 const fetchUser = user.asyncAction;
+
 const { removeToken } = token.actions;
-const { removeUser } = user.actions; // Correção aqui, deve ser actions do user, não do token
+const { removeUser } = user.actions;
 
 export default reducer;
 
@@ -85,7 +85,8 @@ export const autoLogin = () => async (dispatch, getState) => {
 };
 
 export const userLogout = () => (dispatch) => {
-  dispatch(removeUser()); // Correção aqui, deve ser uma função para chamar a action
-  dispatch(removeToken()); // Correção aqui, deve ser uma função para chamar a action
+  dispatch(removeUser());
+  dispatch(removeToken());
+  dispatch(removePhotos());
   window.localStorage.removeItem('token');
 };
