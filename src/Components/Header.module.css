@@ -1,4 +1,4 @@
-.header{
+.header {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
@@ -6,12 +6,12 @@
   margin-bottom: 2rem;
 }
 
-.title{
+.title {
   font-size: 1rem;
   margin: 0px;
 }
 
-.login{
+.login {
   cursor: pointer;
   padding: 0px;
   margin: 0px;
@@ -24,10 +24,10 @@
   border-radius: 50%;
 }
 
-.login.loading{
+.login.loading {
   background: orange;
 }
 
-.login.loaded{
+.login.loaded {
   background: greenyellow;
 }
